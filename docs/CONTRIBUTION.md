@@ -17,19 +17,19 @@ Using Netbeans Git:
 
 Go to the _Team_ column above and choose clone to copy this repository.
 
-![Copy the repo link](Nbeans-gitclone-sc-3.png)
+![Copy the repo link](img/Nbeans-gitclone-sc-3.png)
 
 Copy the repository link
 
-![Insert required credential](Nbeans-gitclone-sc-4.png)
+![Insert required credential](img/Nbeans-gitclone-sc-4.png)
 
 Insert github account credential (red box) and preffered directory for the project (yellow box). 
 
-![Choose branch](Nbeans-gitclone-sc-5.png)
+![Choose branch](img/Nbeans-gitclone-sc-5.png)
 
 Choose any related branch to work on with (can be change later). 
 
-![Finalized detail](Nbeans-gitclone-sc-6.png)
+![Finalized detail](img/Nbeans-gitclone-sc-6.png)
 
 Finalized repo cloning detail, keep remote name as 'origin'.
 
