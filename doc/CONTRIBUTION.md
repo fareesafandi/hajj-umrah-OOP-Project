@@ -4,7 +4,7 @@
 
 Using git bash: 
 
-```git
+```bash
 git clone <link of this github repository>
 
 git clone https://github.com/fareesafandi/hajj-umrah-OOP-Project.git
@@ -19,16 +19,24 @@ error when making changes to main codebase.
 Using git bash: 
 
 **Creating a new branch**
-```git 
+```bash 
 git branch <name-of-your-new-branch>
 ```
 
 **Check the status of your branch**
+
 Make sure you are in the right branch before commiting any changes 
 
-```git
+```bash
 git status 
 * main 
   new-doc 
 ```
 - the asterisk(*) indicate the branch you are currently in
+
+### Creating a pull request
+
+After the changes has been made to another branch and no error is detected then you can safely merge your
+branch with the main branch 
+
+
