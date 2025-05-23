@@ -13,11 +13,11 @@ git clone https://github.com/fareesafandi/hajj-umrah-OOP-Project.git
 
 Using Netbeans Git:
 
-![Nbeans-gitclone-sc-2.png](Nbeans-gitclone-sc-2.png)
+![Nbeans-gitclone-sc-2.png](img/Nbeans-gitclone-sc-2.png)
 
 Go to the _Team_ column above and choose clone to copy this repository.
 
-![Copy the repo link](img/Nbeans-gitclone-sc-3.png)
+![Copy the repo link](img/NBeans-gitclone-sc-3.png)
 
 Copy the repository link
 
