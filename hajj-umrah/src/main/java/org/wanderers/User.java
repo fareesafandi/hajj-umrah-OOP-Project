@@ -1,17 +1,17 @@
 package org.wanderers;
 
-public class Account extends AbstractUser {
+public class User extends AbstractUser {
 
     private int passportID;
     private int visaID; 
     private boolean medicalApprovalStatus; 
     private String packageName; 
 
-    public Account() {
+    public User() {
 
     }
 
-    public Account(String userID, String name, String password, int noPhone, String email) {
+    public User(String userID, String name, String password, int noPhone, String email) {
         this.userID = userID;
         this.name = name; 
         this.password = password; 
@@ -55,7 +55,7 @@ public class Account extends AbstractUser {
         //USER|userID|name|password|noPhone|email|passportID|visaID|medicalApprovalStatus|packageName 
     }
 
-    public Account fromFileFormat(String line) {
+    public User fromFileFormat(String line) {
         
         String[] data = line.split("|");
 
@@ -66,7 +66,7 @@ public class Account extends AbstractUser {
         String email = data[5].trim(); 
 
 
-        return new Account(userID, name, password, noPhone, email); 
+        return new User(userID, name, password, noPhone, email); 
        //return Account instance 
     }
    

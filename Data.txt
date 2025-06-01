@@ -1,0 +1,6 @@
+USER|TESTACCOUNT|Saiful Ahmad Hamidan Bin Khamis Norazam|SaifAHH@gmail.com|129877322|Saif02@gmail.com|0|0|false|null|
+USER|TESTACCOUNT|Bashar James|Bash2323|12955433|BasharEErorr@gmail.com|0|0|false|null|
+USER|IDFailedToGenerate|Muhammad Ali Bin Saifuddin|Ali243335|129788455|AliIbn@gmail.com|0|0|false|null|
+USER|U.1|Nurul Khadijah Bint Mohd Shamsul|Nurul01062009|194322655|NurulKha1998@gmail.com|0|0|false|null|
+USER|U.2|Muhammad Farees bin Afandi|Muhd_23444|194533123|farees.afandi@gmail.com|0|0|false|null|
+USER|U.3|Muhammad Syahmi Bin Abdullah |Abu_9090_|176523667|Syahmi2005@gmail.com|0|0|false|null|

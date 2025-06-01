@@ -3,16 +3,18 @@ package org.wanderers.test;
 import org.wanderers.*;
 import java.util.Scanner;
 
-public class testMain {
+public class TestRegistrationFeature {
     
     public static void main(String[] args) {
        
+           DataStorage store = new DataStorage();  
+           RegistrationService register = new RegistrationService(store); 
+        
         while (true) {
            
            Scanner opt = new Scanner(System.in);
            Scanner choice = new Scanner(System.in); 
-           Scanner num = new Scanner(System.in); 
-           RegistrationService register = new RegistrationService(); 
+           Scanner num = new Scanner(System.in);
            
            System.out.println("Enter details to create an account: ");
            System.out.print("Name: ");
@@ -33,6 +35,7 @@ public class testMain {
            if(c == 'q') {
             System.exit(0);
            }
+        
         }
     }
 }
