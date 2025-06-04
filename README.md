@@ -1,4 +1,4 @@
-# Hajj and Umrah Management System
+# Hajj and Umrah Management System 🕌🕋
 
 Project repository for BICS 1304 Object Oriented Programming final project.
 
