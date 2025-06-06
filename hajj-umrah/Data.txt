@@ -1,3 +1,6 @@
 USER|U.1|Afiq|abc123|112223333|afiq@email.com|0|0|false|null|
 USER|U.2|afiq|afiq|111|afiq|0|0|false|null|
-Booking Detail : B.1|U.1|Standard|Fri Sep 18 00:00:00 MYT 2020|
+
+Booking Detail |B.1|U.2|Standard|Fri Sep 18 00:00:00 MYT 2020|
+
+Booking Detail |B.2|U.3|Standard|Fri Aug 19 00:00:00 MYT 2022|

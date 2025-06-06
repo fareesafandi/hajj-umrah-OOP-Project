@@ -34,7 +34,7 @@ public class BookingDetail extends AbstractUser {
     }
 
     public String toFileFormat() {
-        return "Booking Detail : "
+        return "\n" + "Booking Detail |"
                 + bookID + "|"
                 + userID + "|"
                 + packageName + "|"
