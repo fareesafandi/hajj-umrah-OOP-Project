@@ -2,6 +2,7 @@ package org.wanderers.test;
 
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
 import org.wanderers.*;
@@ -31,9 +32,7 @@ public class TestBookingService {
             // parse date for booking
             System.out.print("Booking Date (yyyy-MM-dd): ");
             String dateInput = scanner.nextLine();
-            
-            
-            
+
             Date bookingDate = null;
             try {
                 bookingDate = dateFormat.parse(dateInput);
@@ -42,8 +41,12 @@ public class TestBookingService {
                 continue; // go back to start of loop
             }
 
+            LocalDate localBookingDate = bookingDate.toInstant()
+                    .atZone(java.time.ZoneId.systemDefault())
+                    .toLocalDate();
+
             // Create booking
-            booking.createBookingDetail(bookID, userID, packageName, bookingDate);
+            booking.createBookingDetail(bookID, userID, packageName, localBookingDate);
 
             System.out.println("Booking created successfully!");
 

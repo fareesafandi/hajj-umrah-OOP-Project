@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.BufferedReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -140,7 +141,7 @@ public class DataStorage {
                         String bookID = data[1];
                         String bookingUserID = data[2];
                         String packageName = data[3];
-                        Date bookingDate = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy").parse(data[4].trim());
+                        LocalDate bookingDate = LocalDate.parse(data[4].trim());
 
                         BookingDetail booking = new BookingDetail(bookID, bookingUserID, packageName, bookingDate);
                         this.bookingInformation.add(booking);

@@ -1,38 +1,36 @@
-
 package org.wanderers;
 
 import org.wanderers.*;
 
 import java.util.ArrayList;
 import java.lang.IndexOutOfBoundsException;
-import java.util.Date;
+import java.time.LocalDate;
 import static org.wanderers.BookingService.ID_DELIMITER;
 
 public class BookingService implements GeneralService {
-    
+
     private ArrayList<BookingDetail> bookingInformation;
     private DataStorage store;
     public static final String ID_DELIMITER = "\\.";
-    
+
     public BookingService(DataStorage store) {
         this.bookingInformation = store.getBookingInformation();
         this.store = store;
     }
-    
-       public void createBookingDetail(String bookID, String userID, String packageName, Date bookingDate) {
+
+    public String createBookingDetail(String bookID, String userID, String packageName, LocalDate bookingDate) {
 
         //Validation methods
         bookID = GenerateID();
         //Check for redundancy
 
-        BookingDetail newBookingDetail  = new BookingDetail(bookID, userID,  packageName, bookingDate);
-
-        System.out.println("Booking ID :  " + "[" + bookID + "] Successfully created!");
+        BookingDetail newBookingDetail = new BookingDetail(bookID, userID, packageName, bookingDate);
         store.addBookingDetail(newBookingDetail);
         store.saveToFile();
+        return "Booking ID [" + bookID + "] created successfully for " + userID + "!";
     }
-    
-      public String GenerateID() {
+
+    public String GenerateID() {
         /*
      * ID Naming Convention for BookingDetail Class
      *  - for BookID starts with 'B' and then any 
@@ -60,8 +58,4 @@ public class BookingService implements GeneralService {
         return ID;
     }
 
-
-    
-    
-    
 }
