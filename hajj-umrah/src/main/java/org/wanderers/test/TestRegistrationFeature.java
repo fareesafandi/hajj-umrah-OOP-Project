@@ -26,9 +26,11 @@ public class TestRegistrationFeature {
            System.out.print("Phone Number(No '-'): ");
            int noPhone = opt.nextInt(); 
            
-           register.createAccount(name, password, noPhone, email);
+           String status = register.createAccount(name, password, noPhone, email);
 
-           
+           if(status == null) {
+            System.out.println("Account creation failed");
+           } 
            System.out.println("Press 'q' to quit testing.");
            char c = choice.nextLine().charAt(0); 
 

@@ -18,7 +18,7 @@ public class DataStorage {
    - this class will receive Arraylists of objects from other class
    - This method should read from the file first when initializing: Data Integrity Preservation.
    ISSUES:
-   - [1/6/2025]Data get overwrited everytime new instances of DataStorage is made 
+   - [1/6/2025]Data get overwrited everytime new instances of DataStorage is made: Solved 
    */
 
    //Collection of instances

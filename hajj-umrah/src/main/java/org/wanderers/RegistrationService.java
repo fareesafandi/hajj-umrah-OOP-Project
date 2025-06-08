@@ -17,18 +17,57 @@ public class RegistrationService implements GeneralService {
         this.store = store;  
     }
 
-   public void createAccount(String name, String password, int noPhone, String email) {
-   
-    //Validation methods
+   public String createAccount(String name, String password, int noPhone, String email) {
+    /*
+     * createAccount() method 
+     * - method should return a status to indicate the creation of an account.
+     * - status indicator should create a response control for UI 
+     * - 0 - Account creation successful 
+     * - 1 - Account creation failed
+     * - The method willl return a String to indicate message in account creation.
+     * - the String will be passed to controller/UI class.
+     */
     String userID = GenerateID();
-    //Check for redundancy
+    //Validation methods
+    if(userID == null && name == null && password == null && noPhone == 0 && email == null) {
+        System.out.println("Please enter all credential");
+    }
+    
 
+    //TODO:Validation of data in storage file.
+    /* - Check for null field 
+     * - Iterate through UserCollection ArrayList
+     * - Check for all the details, if all the credential are equal then 
+     * the account itself is redundant, prompt the user to login
+     */
+    for(int i = 0;i < UserCollection.size();i++)  {
+
+        //Check for UserID redundancy 
+        if(userID.equals(UserCollection.get(i).userID)) {
+            //How will UI response to error message?
+            System.out.println("UserID already in used!");
+            return "UserID Already in Used!"; 
+        }
+
+        if(name.equals(UserCollection.get(i).name)) {
+            System.out.println("The name of this user already exist");
+
+            return "The name of this user already exist"; 
+        }
+
+        if(password.equals(UserCollection.get(i).password)) {
+            System.out.println("Password already exist, please choose another password.");
+        }
+
+    }
 
     User newUser = new User(userID, name, password, noPhone, email); 
     
     System.out.println("User Account: " + "[" + userID + "] Successfully created!");
     store.addAccount(newUser);
     store.saveToFile();
+
+    return "Account Creation Successful, Please Login"; //account creation successful
    }
 
    public ArrayList<User> getUserAccountCollection() {
