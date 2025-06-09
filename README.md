@@ -6,6 +6,14 @@ Group name: **Wanderers**
 ### Description
 Our project is to create a hajj and umrah system, that will be build in Java language and utilizing JavaFX User Interface library that runs in maven build system. Our systems will follow an Object Oriented Programming (OOP) paradigm of system design which will utilize the basic aspect of OOP that is APIE, which is consisted of Abstraction, Polymorphism, Inheritance and Encapsulation.
 
+## Technologies used
+
+![Apache Maven](https://maven.apache.org/images/maven-logo-black-on-white.png)
+
+![Java](https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg)
+
+![JavaFX](https://upload.wikimedia.org/wikipedia/en/c/cc/JavaFX_Logo.png)
+
 ## How to run 
 
 **Requirements**: 
