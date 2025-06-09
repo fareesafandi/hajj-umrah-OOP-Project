@@ -1,6 +1,7 @@
 package org.wanderers;
 
 import org.wanderers.RegistrationService;
+import org.wanderers.BookingScene;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -157,6 +158,19 @@ public class UserDashboardScene {
                           "-fx-font-family: 'Courier';" + 
                           "-fx-font-weight: bold;" + 
                           "-fx-background-insets: 0, 0, 0, 50;";
+
+        //BookingTab 
+        VBox bookVbox = new VBox(); 
+        Button toBookingButton = new Button("To Booking Page."); 
+        Label bookingLabel = new Label(); 
+
+        bookingLabel.setText("Enter Booking Page:");
+
+        toBookingButton.setOnAction(e -> {
+            toBookingScene();
+        });
+
+        bookVbox.getChildren().addAll(bookingLabel, toBookingButton); 
         
         profileTab.setText("User Profile");
         profileTab.setContent(mainHboxUser);
@@ -166,6 +180,7 @@ public class UserDashboardScene {
         bookingTab.setText("Booking");
         bookingTab.setStyle(tabStyle);
         bookingTab.setClosable(false);
+        bookingTab.setContent(bookVbox);
 
         trackingTab.setText("Tracking");
         trackingTab.setStyle(tabStyle);
@@ -188,6 +203,11 @@ public class UserDashboardScene {
         visaLabel.setText("VISA NUMBER UPDATED SUCCESSFULLY: UserID: " + userID); 
         store.saveToFile();
         this.display(primaryStage);
+    }
+
+    public void toBookingScene() {
+        BookingScene booking = new BookingScene(store); 
+        booking.start(primaryStage);
     }
 
     public void display(Stage primaryStage) {

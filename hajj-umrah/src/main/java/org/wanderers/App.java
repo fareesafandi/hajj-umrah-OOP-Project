@@ -26,7 +26,7 @@ public class App extends Application {
         BookingScene booking = new BookingScene(store); //only for reference
         RegistrationScene register = new RegistrationScene(store); 
         register.display(primaryStage);
-        booking.start(primaryStage);
+        // booking.start(primaryStage);
 
     }
 

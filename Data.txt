@@ -11,3 +11,9 @@ USER|U.7|Muhammad Akmal bin Rafizi|Akm4747|194566582|AkmalHebat1234@gmail.com|0|
 USER|U.8|Aisha Khan|K!j8sP@w7R|196422344|aisha.khan@example.com|Female|0|0|false|null|
 USER|U.9|Fatima Binti Abdullah|Mn%4rG^h0V|197633455|fatima.abdul@gmail.com|Female|0|0|false|null|
 USER|U.10|atesat|sdfasd|1111|asdfsa|Female|0|0|false|null|
+USER|U.11|Muhammad Akmal|akmal1212|197234546|AKmMuha2001@gmail.com|Male|0|0|false|null|
+USER|U.12|Amirul Hamzah|Amir424|185234784|Amir.Hamz@gmail.com|Male|0|0|false|null|
+
+Booking Detail |B.1|U.5|Premium (RM 10800)|2025-06-10|
+
+Booking Detail |B.2|U.1|Standard (RM 8900)|2025-07-04|
