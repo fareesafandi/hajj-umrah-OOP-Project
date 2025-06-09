@@ -32,12 +32,29 @@ public class BookingScene {
     private DatePicker bookingDateField;
     private Text resultText;
     private DataStorage storage;
+    private Stage bookingStage;
+    private String userID;
+    private String name;
+    private String email;
+    private int noPhone;
+    private String gender;
 
-    public BookingScene(DataStorage storage) {
-        this.storage = storage;
+ public BookingScene(DataStorage storage, Stage bookingStage, String userID, String name, String email, int noPhone, String gender) {
+    this.storage = storage;
+    this.bookingStage = bookingStage;
+    this.userID = userID;
+    this.name = name;
+    this.email = email;
+    this.noPhone = noPhone;
+    this.gender = gender;
+}
+
+    public void toUserDashboardScene() {
+        UserDashboardScene dashboard = new UserDashboardScene(userID, name, email, noPhone, gender, storage);
+        dashboard.display(bookingStage);  // Switch scene in the current stage
     }
 
-    public void start(Stage bookingStage) {
+    public void start() {
 
         HBox imageBox = new HBox(10);
         imageBox.setPadding(new Insets(20));
@@ -128,6 +145,10 @@ public class BookingScene {
             bookingButton.setStyle(bookingButtonStyle);
         });
 
+        Button returnButton = new Button("Return");
+        returnButton.setStyle(bookingButtonStyle);
+        returnButton.setOnAction(e -> toUserDashboardScene());
+
         String mainLabelStyle = "-fx-font-family: Courier;"
                 + "-fx-text-fill: white;"
                 + "-fx-background-color: black;"
@@ -146,6 +167,7 @@ public class BookingScene {
                 + "-fx-font-weight: bold;";
 
         bookingButton.setStyle(submitButtonStyle);
+        returnButton.setStyle(submitButtonStyle);
 
         grid.add(bookIDLabel, 0, 0);
         grid.add(bookIDField, 1, 0);
@@ -156,6 +178,7 @@ public class BookingScene {
         grid.add(bookingDateLabel, 0, 3);
         grid.add(bookingDateField, 1, 3);
         grid.add(bookingButton, 1, 4);
+        grid.add(returnButton, 1, 5);
         grid.setAlignment(Pos.CENTER);
 
         // VBox to hold the grid
@@ -220,5 +243,6 @@ public class BookingScene {
         packageName.setValue("Choose A Package:");
         bookingDateField.setValue(null);
     }
+
 
 }
