@@ -1,9 +1,6 @@
 package org.wanderers;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import org.wanderers.RegistrationScene;
@@ -20,17 +17,20 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage stage) {
-        this.mainStage = stage;
-
-        DataStorage store = new DataStorage(); 
+    public void start(Stage primaryStage) {
+        /*
+         * The program will either start with user registration or user login
+         */
+        DataStorage store = new DataStorage();
         
+        BookingScene booking = new BookingScene(store); //only for reference
         RegistrationScene register = new RegistrationScene(store); 
-        register.display(stage);
+        register.display(primaryStage);
+        // booking.start(primaryStage);
+
     }
 
     public static void main(String[] args) {
         launch();
     }
-
 }
