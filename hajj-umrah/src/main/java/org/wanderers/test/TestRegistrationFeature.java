@@ -23,6 +23,14 @@ public class TestRegistrationFeature {
            String password = opt.nextLine();
            System.out.print("Email: ");
            String email = opt.nextLine(); 
+<<<<<<< HEAD
+           System.out.print("Phone Number(No '-'): ");
+           int noPhone = opt.nextInt(); 
+           
+           register.createAccount(name, password, noPhone, email);
+
+           
+=======
            System.out.print("Gender: ");
            String gender = opt.nextLine(); 
            System.out.print("Phone Number(No '-'): ");
@@ -33,12 +41,20 @@ public class TestRegistrationFeature {
            if(status == null) {
             System.out.println("Account creation failed");
            } 
+>>>>>>> 2f35afc741aabe6bddf2795e06a9cfbcdf2e9903
            System.out.println("Press 'q' to quit testing.");
            char c = choice.nextLine().charAt(0); 
 
            if(c == 'q') {
             System.exit(0);
            }
+<<<<<<< HEAD
+
+           opt.close();
+           choice.close();
+           num.close();
+=======
+>>>>>>> 2f35afc741aabe6bddf2795e06a9cfbcdf2e9903
         
         }
     }
