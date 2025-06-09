@@ -11,13 +11,14 @@ public class RegistrationService implements GeneralService {
     private DataStorage store;
     public static final String ID_DELIMITER = "\\.";  
     
+    private String userID; 
 
     public RegistrationService(DataStorage store) {
         this.UserCollection = store.getUsers();
         this.store = store;  
     }
 
-   public String createAccount(String name, String password, int noPhone, String email) {
+   public String createAccount(String name, String password, int noPhone, String email, String gender) {
     /*
      * createAccount() method 
      * - method should return a status to indicate the creation of an account.
@@ -27,7 +28,7 @@ public class RegistrationService implements GeneralService {
      * - The method willl return a String to indicate message in account creation.
      * - the String will be passed to controller/UI class.
      */
-    String userID = GenerateID();
+    userID = GenerateID();
     //Validation methods
     if(userID == null && name == null && password == null && noPhone == 0 && email == null) {
         System.out.println("Please enter all credential");
@@ -61,7 +62,7 @@ public class RegistrationService implements GeneralService {
 
     }
 
-    User newUser = new User(userID, name, password, noPhone, email); 
+    User newUser = new User(userID, name, password, noPhone, email, gender); 
     
     System.out.println("User Account: " + "[" + userID + "] Successfully created!");
     store.addAccount(newUser);
@@ -101,9 +102,20 @@ public class RegistrationService implements GeneralService {
     return ID; 
    }
 
+   public String getGeneratedUserID() {
+    return this.userID; 
+   }
 
-   public void findUserID() {
+   public User findUserByID(String userID) {
     //find user ID from the collection of account arraylist
+    
+    for(int i = 0;i < UserCollection.size(); i++) {
+        if(userID == UserCollection.get(i).userID) {
+            return UserCollection.get(i);
+        }
+    }
+
+    return UserCollection.get(0); 
    }
 
 }

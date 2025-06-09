@@ -1,7 +1,13 @@
-USER|TESTACCOUNT|Saiful Ahmad Hamidan Bin Khamis Norazam|SaifAHH@gmail.com|129877322|Saif02@gmail.com|0|0|false|null|
-USER|TESTACCOUNT|Bashar James|Bash2323|12955433|BasharEErorr@gmail.com|0|0|false|null|
-USER|IDFailedToGenerate|Muhammad Ali Bin Saifuddin|Ali243335|129788455|AliIbn@gmail.com|0|0|false|null|
-USER|U.1|Nurul Khadijah Bint Mohd Shamsul|Nurul01062009|194322655|NurulKha1998@gmail.com|0|0|false|null|
-USER|U.2|Muhammad Farees bin Afandi|Muhd_23444|194533123|farees.afandi@gmail.com|0|0|false|null|
-USER|U.3|Muhammad Syahmi Bin Abdullah |Abu_9090_|176523667|Syahmi2005@gmail.com|0|0|false|null|
-USER|U.4|Muhammad Ali bin Zainuddin|Zaid2323|128766544|Ali_Zaid@gmail.com|0|0|false|null|
+USER|USERNOTFOUND|Saiful Ahmad Hamidan Bin Khamis Norazam|SaifAHH@gmail.com|129877322|Saif02@gmail.com|0|0|0|false|null|
+USER|TESTACCOUNT|Bashar James|Bash2323|12955433|BasharEErorr@gmail.com|0|0|0|false|null|
+USER|IDFailedToGenerate|Muhammad Ali Bin Saifuddin|Ali243335|129788455|AliIbn@gmail.com|0|0|0|false|null|
+USER|U.1|Nurul Khadijah Bint Mohd Shamsul|Nurul01062009|194322655|NurulKha1998@gmail.com|0|0|0|false|null|
+USER|U.2|Muhammad Farees bin Afandi|Muhd_23444|194533123|farees.afandi@gmail.com|0|0|0|false|null|
+USER|U.3|Muhammad Syahmi Bin Abdullah |Abu_9090_|176523667|Syahmi2005@gmail.com|0|0|0|false|null|
+USER|U.4|Muhammad Ali bin Zainuddin|Zaid2323|128766544|Ali_Zaid@gmail.com|0|0|0|false|null|
+USER|U.5|Ahmad Fauzan bin Shamsol Nizam |Ahmad1234|184467832|Ahmad.Fauz2001@gmail.com|0|0|0|false|null|
+USER|U.6|Muhammad Amirul Faizul bin Abdul Karim|Amir2009|197423832|Amirul_Faiz@gmail.com|0|0|0|false|null|
+USER|U.7|Muhammad Akmal bin Rafizi|Akm4747|194566582|AkmalHebat1234@gmail.com|0|0|0|false|null|
+USER|U.8|Aisha Khan|K!j8sP@w7R|196422344|aisha.khan@example.com|Female|0|0|false|null|
+USER|U.9|Fatima Binti Abdullah|Mn%4rG^h0V|197633455|fatima.abdul@gmail.com|Female|0|0|false|null|
+USER|U.10|atesat|sdfasd|1111|asdfsa|Female|0|0|false|null|

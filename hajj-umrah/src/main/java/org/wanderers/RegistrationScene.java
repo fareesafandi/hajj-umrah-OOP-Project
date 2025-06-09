@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 import org.wanderers.RegistrationService;
+import org.wanderers.UserDashboardScene;
 
 import javafx.scene.control.*;
 import javafx.geometry.Rectangle2D;
@@ -23,11 +24,14 @@ public class RegistrationScene {
 /* 
 * -  
 */   
-   
+    
+    private Stage primaryStage; 
     private TextField nameField; 
     private TextField passwordField; 
     private TextField emailField; 
     private TextField phoneField;
+    private RadioButton male; 
+    private RadioButton female; 
     private Text resultText; 
     private DataStorage storage; 
 
@@ -45,6 +49,18 @@ public class RegistrationScene {
         Label passwordLabel = new Label("Password "); 
         Label emailLabel = new Label("Email "); 
         Label phoneLabel = new Label("Phone Number");
+
+        //TODO: add label styles
+
+        male = new RadioButton("Male"); 
+        female = new RadioButton("Female"); 
+        ToggleGroup genderGroup = new ToggleGroup(); 
+        male.setToggleGroup(genderGroup);
+        female.setToggleGroup(genderGroup);
+        HBox genderSelect = new HBox(10, male, female); 
+        genderSelect.setStyle("-fx-background-color: #C8FFBE;" +
+                              "-fx-border-radius: 10px;" + 
+                              "-fx-border-width: 5px;");
         
         this.nameField = new TextField(); 
         this.passwordField = new TextField();
@@ -106,7 +122,7 @@ public class RegistrationScene {
 
         mainVbox.setStyle(mainVboxStyle);
         
-        mainVbox.getChildren().addAll(titleHeader, nameLabel, nameField, passwordLabel, passwordField, 
+        mainVbox.getChildren().addAll(titleHeader, nameLabel, nameField, genderSelect, passwordLabel, passwordField, 
                                       emailLabel, emailField, phoneLabel, phoneField,
                                       submitButton, resultText); 
 
@@ -145,12 +161,14 @@ public class RegistrationScene {
         - 
         */ 
         String name = nameField.getText();
+        String gender = male.isSelected() ? "Male":"Female";
         String password = passwordField.getText(); 
         String email = emailField.getText();
         int noPhone = Integer.parseInt(phoneField.getText());
         //TODO: define error checking for noPhone field 
         
-        String resultTextStyle = "-fx-text-fill: white;";
+        String resultTextStyle = "-fx-text-fill: white;" + 
+                                 "-fx-background-color: #EFF8E2";  //HoneyDew
         resultText.setStyle(resultTextStyle);
         //Debug
         resultText.setText("[DATA]: " + name + ", " + password + ", " + email + ", " + noPhone);
@@ -161,12 +179,18 @@ public class RegistrationScene {
 
         RegistrationService registerUser = new RegistrationService(this.storage); 
 
-        String statusMessage = registerUser.createAccount(name, password, noPhone, email); 
+        String statusMessage = registerUser.createAccount(name, password, noPhone, email, gender); 
         resultText.setText(statusMessage);
+
+        if(statusMessage == "Account Creation Successful, Please Login") {
+            UserDashboardScene userDashboard = new UserDashboardScene(registerUser.getGeneratedUserID(), name, email, noPhone, gender, storage);
+            userDashboard.display(primaryStage);
+        }
     }
 
     public void display(Stage primaryStage) {
-       
+        this.primaryStage = primaryStage;
+
         primaryStage.setTitle("USER REGISTRATION PAGE"); 
 
         //ICON are outsourced, subjected to attribution: <a href="https://www.flaticon.com/free-icons/kaaba" title="kaaba icons">Kaaba icons created by Muhamad Ulum - Flaticon</a>

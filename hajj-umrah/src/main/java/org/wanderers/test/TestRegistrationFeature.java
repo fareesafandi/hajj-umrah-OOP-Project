@@ -23,10 +23,12 @@ public class TestRegistrationFeature {
            String password = opt.nextLine();
            System.out.print("Email: ");
            String email = opt.nextLine(); 
+           System.out.print("Gender: ");
+           String gender = opt.nextLine(); 
            System.out.print("Phone Number(No '-'): ");
            int noPhone = opt.nextInt(); 
            
-           String status = register.createAccount(name, password, noPhone, email);
+           String status = register.createAccount(name, password, noPhone, email, gender);
 
            if(status == null) {
             System.out.println("Account creation failed");

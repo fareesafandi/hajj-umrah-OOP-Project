@@ -5,18 +5,20 @@ public class User extends AbstractUser {
     private int passportID;
     private int visaID; 
     private boolean medicalApprovalStatus; 
-    private String packageName; 
+    private String packageName;
+    private String gender;  
 
     public User() {
 
     }
 
-    public User(String userID, String name, String password, int noPhone, String email) {
+    public User(String userID, String name, String password, int noPhone, String email, String gender) {
         this.userID = userID;
         this.name = name; 
         this.password = password; 
         this.noPhone = noPhone; 
-        this.email = email;  
+        this.email = email; 
+        this.gender = gender;  
     }
 
     public int getPassportID() {
@@ -39,6 +41,10 @@ public class User extends AbstractUser {
         return packageName; 
     }
 
+    public void setVisaID(int visaID) {
+        this.visaID = visaID; 
+    }
+
     public String toFileFormat() {
         
         return "USER|" + 
@@ -47,6 +53,7 @@ public class User extends AbstractUser {
                password + "|" + 
                Integer.toString(noPhone) + "|" +
                email + "|" +
+               gender + "|" +
                Integer.toString(passportID) + "|" +
                Integer.toString(visaID) + "|" +
                Boolean.toString(medicalApprovalStatus) + "|" +
@@ -64,9 +71,10 @@ public class User extends AbstractUser {
         String password = data[3].trim(); 
         int noPhone = Integer.parseInt(data[4]); 
         String email = data[5].trim(); 
+        String gender = data[6].trim(); 
 
 
-        return new User(userID, name, password, noPhone, email); 
+        return new User(userID, name, password, noPhone, email, gender); 
        //return Account instance 
     }
    

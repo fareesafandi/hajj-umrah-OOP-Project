@@ -106,8 +106,9 @@ public class DataStorage {
                 String password = data[3];
                 int noPhone = Integer.parseInt(data[4]); 
                 String email = data[5];
+                String gender = data[6]; 
 
-                User newAccount = new User(userID, name, password, noPhone, email); 
+                User newAccount = new User(userID, name, password, noPhone, email, gender); 
                 this.UserCollection.add(newAccount);
                 System.out.println("User: " +"["+data[1].trim()+"]"+" Successfully read!");  
                 break;

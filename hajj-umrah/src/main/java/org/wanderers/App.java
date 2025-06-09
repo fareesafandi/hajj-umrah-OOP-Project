@@ -13,9 +13,16 @@ import org.wanderers.DataStorage;
  */
 public class App extends Application {
 
+    private Stage mainStage; 
+
+    public Stage getMainStage() {
+        return mainStage; 
+    }
+
     @Override
     public void start(Stage stage) {
-        
+        this.mainStage = stage;
+
         DataStorage store = new DataStorage(); 
         
         RegistrationScene register = new RegistrationScene(store); 
