@@ -8,6 +8,18 @@ Our project is to create a hajj and umrah system, that will be build in Java lan
 
 ## How to run 
 
+**Requirements**: 
+- Apache Maven (latest version recommended)
+- Java (latest version)
+
+Navigate to the root directory of the project and run the code:
+
+```bash
+.../hajj-umrah-oop-proj> maven clean install
+```
+
+
+
 ## Collaborator 
 The development of this system are from the members of the group **Wanderers** which is: 
 
