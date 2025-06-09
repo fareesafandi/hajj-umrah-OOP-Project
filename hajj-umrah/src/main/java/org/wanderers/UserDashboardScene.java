@@ -205,10 +205,10 @@ public class UserDashboardScene {
         this.display(primaryStage);
     }
 
-    public void toBookingScene() {
-        BookingScene booking = new BookingScene(store); 
-        booking.start(primaryStage);
-    }
+public void toBookingScene() {
+    BookingScene booking = new BookingScene(store, primaryStage, userID, name, email, noPhone, gender);
+    booking.start();
+}
 
     public void display(Stage primaryStage) {
         this.primaryStage = primaryStage; 
