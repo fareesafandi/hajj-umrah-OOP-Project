@@ -1,0 +1,101 @@
+/* General background color for the scene */
+.root {
+    -fx-background-color: #f4f7f6; /* Light gray-blue */
+    -fx-font-family: "Arial", sans-serif;
+}
+
+/* Main container styling */
+.hbox-main {
+    -fx-padding: 30px;
+    -fx-spacing: 40px;
+    -fx-alignment: center;
+}
+
+/* Left VBox styling */
+.vbox-left {
+    -fx-padding: 20px;
+    -fx-spacing: 25px; /* Matches the new spacing in Java code */
+    -fx-alignment: top-left;
+    -fx-background-color: #ffffff; /* White background */
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5); /* Subtle shadow */
+}
+
+/* Header Label */
+.header-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50; /* Dark blue-gray */
+    -fx-padding: 0 0 10px 0;
+    -fx-border-color: #ecf0f1; /* Light border at bottom */
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* New: Styling for the section containers */
+.section-container {
+    -fx-background-color: #ffffff; /* White background for sections */
+    -fx-padding: 15px; /* Padding inside sections */
+    -fx-spacing: 10px; /* Spacing between elements within sections */
+    -fx-border-color: #e0e0e0; /* Light border color */
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0, 0, 2); /* Very subtle shadow */
+}
+
+/* Labels for input fields */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #34495e; /* Medium dark blue-gray */
+}
+
+/* Text Fields */
+.text-field {
+    -fx-pref-width: 250px;
+    -fx-padding: 8px 10px;
+    -fx-border-color: #bdc3c7; /* Light gray border */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-size: 14px;
+}
+.text-field:focused {
+    -fx-border-color: #3498db; /* Blue on focus */
+    -fx-effect: innershadow(gaussian, rgba(52,152,219,0.2), 5, 0, 0, 0);
+}
+
+/* Button */
+.button {
+    -fx-background-color: #3498db; /* Blue */
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-cursor: hand; /* Pointer cursor on hover */
+}
+.button:hover {
+    -fx-background-color: #2980b9; /* Darker blue on hover */
+}
+.button:pressed {
+    -fx-background-color: #21618c; /* Even darker blue on press */
+}
+
+/* Result Text Area */
+.result-text {
+    -fx-fill: #2c3e50; /* Dark blue-gray text */
+    -fx-font-size: 14px;
+    -fx-line-spacing: 5px; /* Space between lines */
+    -fx-wrap-text: true;
+}
+
+/* New: Styling for the ScrollPane containing results */
+.scroll-pane-results {
+    -fx-background-color: transparent; /* Makes background of scroll pane transparent */
+    -fx-border-color: #bdc3c7; /* Light gray border */
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}

@@ -57,12 +57,12 @@ public class TrackDetail {
 
     // Method to convert to file format (for DataStorage)
     public String toFileFormat() {
-        return "TRACKDETAIL: " +
-               currUserID + "|" +
-               tracID + "|" +
-               hajjJourneyStatus + "|" +
-               bookingProgress + "|" +
-               hajjProgress + "|";
+        return "TRACKDETAIL" + "|" +
+            currUserID + "|" +
+            tracID + "|" +
+            hajjJourneyStatus + "|" +
+            bookingProgress + "|" +
+            hajjProgress + "|";
     }
 
     // Static method to create TrackDetail from file format (for DataStorage loading)

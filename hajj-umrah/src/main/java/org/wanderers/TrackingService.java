@@ -5,20 +5,19 @@ import java.util.Random;
 
 // keyword = "fix"
 
-/*
- * This calss contains method that allows the tracking of Hajj participants 
- VAR    
-    - trackingCollection: ArrayList<TrackDetail>
-    - hajjJourneyStatus: String
-    - bookingProgress: String
- METHOD
-    + TrackingService(DataStorage store)
-    + cancelBooking(boolean): void
-    + viewBookingProgress(): void
-    + getHajjJourneyStatus(): void
-    + generatedID(): String
-    */
-// 2414771
+//This calss contains method that allows the tracking of Hajj participants 
+//  VAR    
+//     - trackingCollection: ArrayList<TrackDetail>
+//     - hajjJourneyStatus: String
+//     - bookingProgress: String
+//  METHOD
+//     + TrackingService(DataStorage store)
+//     + cancelBooking(boolean): void
+//     + viewBookingProgress(): void
+//     + getHajjJourneyStatus(): void
+//     + generatedID(): String
+//     */
+// // 2414771
 
 public class TrackingService implements GeneralService {
 
@@ -31,18 +30,20 @@ public class TrackingService implements GeneralService {
         this.trackingCollection = new ArrayList<>(); // Initialize the collection
         
         loadTrackingDetailsFromStorage(); // Load existing tracking details from dataStorage 
+        System.out.println("DEBUG: TrackingService initialized. Collection size is: " + this.trackingCollection.size());
     }
 
     //fix
     // this simply a call method from DataStorage to get all previously saved TrackDetail objects
     private void loadTrackingDetailsFromStorage() {
         ArrayList<TrackDetail> loadedTracDetails = dataStorage.getAllTrackDetails();
-        System.out.println("Loading tracking details from data storage...");
+        System.out.println("[DEBUG] TrackingService: Loading tracking details from data storage... hmm"); // hmm
         if (loadedTracDetails != null) {
-            this.trackingCollection.addAll(dataStorage.getAllTrackDetails()); // get ALL of the track details, at least it should
-            System.out.println("Loaded " + loadedTracDetails.size() + " tracking details."); // Display how many tracking details already existing
+            this.trackingCollection.clear(); // hmm: Ensure fresh load into TrackingService's collection
+            this.trackingCollection.addAll(loadedTracDetails); // hmm: Corrected to use loadedTracDetails
+            System.out.println("[DEBUG] TrackingService: Loaded " + this.trackingCollection.size() + " tracking details into service's collection. hmm"); // hmm
         } else {
-            System.out.println("No tracking details found in storage or an error occurred during loading.");
+            System.out.println("[DEBUG] TrackingService: No tracking details found in storage or an error occurred during loading. hmm"); // hmm
         }    
     }
 
@@ -105,15 +106,39 @@ public class TrackingService implements GeneralService {
 
     // Get a specific TrackDetail object
     // optional
-    /*
-     * public TrackDetail getTrackDetail(String tracID) {
+    public TrackDetail getTrackDetail(String tracID) {
+        System.out.println("[DEBUG] TrackingService: Searching for Tracking ID: '" + tracID); // hmm
+        System.out.println("[DEBUG] TrackingService: Current trackingCollection size: " + trackingCollection.size() + " hmm"); // hmm
         for (TrackDetail detail : trackingCollection) {
+            System.out.println("[DEBUG] TrackingService: Comparing with stored ID: '" + detail.getTracID()); // hmm
             if (detail.getTracID().equals(tracID)) {
+                System.out.println("[DEBUG] TrackingService: Match found for ID: '" + tracID); // hmm
                 return detail;
             }
         }
+        System.out.println("[DEBUG] TrackingService: Tracking ID '" + tracID + "' not found in collection. hmm"); // hmm
         return null;
     }
-     */
+
+    // redundancy........
+    // fix 
+    // Retrieves all TrackDetail objects associated with a specific User ID.
+    public ArrayList<TrackDetail> getTrackDetailsByUserID(String userID) {
+        System.out.println("[DEBUG] TrackingService: Searching for Tracking Details by User ID: '" + userID);
+        ArrayList<TrackDetail> foundDetails = new ArrayList<>();
+        System.out.println("[DEBUG] TrackingService: Current trackingCollection size: " + trackingCollection.size());
+        for (TrackDetail detail : trackingCollection) {
+            System.out.println("[DEBUG] TrackingService: Comparing with stored User ID: '" + detail.getCurrUserID());
+            if (detail.getCurrUserID().equals(userID)) {
+                foundDetails.add(detail);
+                System.out.println("[DEBUG] TrackingService: Match found for User ID: '" + userID + "' with Tracking ID: '" + detail.getTracID());
+            }
+        }
+        if (foundDetails.isEmpty()) {
+            System.out.println("[DEBUG] TrackingService: No tracking details found for User ID: '" + userID);
+        }
+        return foundDetails;
+    }
     
 }
+ 

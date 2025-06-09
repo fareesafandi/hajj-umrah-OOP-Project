@@ -1,0 +1,2 @@
+USER|U.1|adil adil|adil|1111|adil|0|0|false|null|
+TRACKDETAIL|0111|523150|Pending|Cancelled|Visa Approved|
