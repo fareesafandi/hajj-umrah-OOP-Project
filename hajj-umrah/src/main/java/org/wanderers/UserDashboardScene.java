@@ -160,7 +160,7 @@ public class UserDashboardScene {
                           "-fx-background-insets: 0, 0, 0, 50;";
 
         //BookingTab 
-        VBox bookVbox = new VBox(); 
+        VBox bookVbox = new VBox(10); 
         Button toBookingButton = new Button("To Booking Page."); 
         Label bookingLabel = new Label(); 
 
