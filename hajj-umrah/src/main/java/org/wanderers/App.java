@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import org.wanderers.TrackingScene;
+import org.wanderers.AuthenticationScene;
 import org.wanderers.DataStorage;
 /**
  * JavaFX App
@@ -18,7 +18,7 @@ public class App extends Application {
         
         DataStorage store = new DataStorage(); 
         
-        TrackingScene register = new TrackingScene(store); 
+        AuthenticationScene register = new AuthenticationScene(store); 
         register.display(stage);
     }
 
