@@ -13,6 +13,8 @@ USER|U.9|Fatima Binti Abdullah|Mn%4rG^h0V|197633455|fatima.abdul@gmail.com|Femal
 USER|U.10|atesat|sdfasd|1111|asdfsa|Female|0|0|false|null|
 USER|U.11|Muhammad Akmal|akmal1212|197234546|AKmMuha2001@gmail.com|Male|0|0|false|null|
 USER|U.12|Amirul Hamzah|Amir424|185234784|Amir.Hamz@gmail.com|Male|0|0|false|null|
+USER|U.13|Muhammad Zaid bin Hariri|ZaidHari_1224_|192344566|Zaid.HarHar@gmail.com|Male|0|0|false|null|
+USER|U.14|Humaira Aqilah Binti Mohamad Kasim |Aqil1212|164233566|Aqil_Hum@gmail.com|Female|0|0|false|null|
 
 Booking Detail |B.1|U.5|Premium (RM 10800)|2025-06-10|
 

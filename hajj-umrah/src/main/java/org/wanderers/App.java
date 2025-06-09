@@ -23,10 +23,8 @@ public class App extends Application {
          */
         DataStorage store = new DataStorage();
         
-        BookingScene booking = new BookingScene(store); //only for reference
         RegistrationScene register = new RegistrationScene(store); 
         register.display(primaryStage);
-        // booking.start(primaryStage);
 
     }
 
