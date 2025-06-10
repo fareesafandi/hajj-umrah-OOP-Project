@@ -7,19 +7,15 @@ public class AuthenticationServiceTest {
     public static void main(String[] args) {
         System.out.println("--- Starting AuthenticationService Manual Tests ---");
 
-        // 1. Setup: Initialize DataStorage and AuthenticationService
-        // DataStorage automatically attempts to load data from "Data.txt"
-        // in your resources folder when it's instantiated.
+       
         DataStorage dataStorage = new DataStorage();
         Authentication authenticationService = new Authentication(dataStorage);
 
-        // 2. Add some test users to DataStorage
-        // Note: DataStorage's addAccount method also calls saveToFile(),
         // so these users will be written to your Data.txt file.
         // If you run this multiple times, these users might accumulate in Data.txt.
-        User user1 = new User("U.101", "Alice Smith", "alicepass", 111222333, "alice@example.com");
-        User user2 = new User("U.102", "Bob Johnson", "bobpass", 444555666, "bob@example.com");
-        User user3 = new User("U.103", "Charlie Brown", "charliepass", 777888999, "charlie@example.com");
+        User user1 = new User("U.101", "Alice Smith", "alicepass", 111222333, "alice@example.com", "Female");
+        User user2 = new User("U.102", "Bob Johnson", "bobpass", 444555666, "bob@example.com", "Male");
+        User user3 = new User("U.103", "Charlie Brown", "charliepass", 777888999, "charlie@example.com", "Male");
 
         System.out.println("Attempting to add test users to DataStorage...");
         dataStorage.addAccount(user1);

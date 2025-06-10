@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 
 import org.wanderers.RegistrationService;
 import org.wanderers.UserDashboardScene;
+import org.wanderers.AuthenticationScene;
 
 import javafx.scene.control.*;
 import javafx.geometry.Rectangle2D;
@@ -34,9 +35,11 @@ public class RegistrationScene {
     private RadioButton female; 
     private Text resultText; 
     private DataStorage storage; 
+    private RegistrationService registerUser;
 
     RegistrationScene(DataStorage storage) {
         this.storage = storage; 
+        this.registerUser = new RegistrationService(this.storage); 
     }
 
     public Scene initializeScene() {
@@ -121,10 +124,18 @@ public class RegistrationScene {
                                "-fx-text-align: center;";
 
         mainVbox.setStyle(mainVboxStyle);
-        
+       
+
+        Button loginButton = new Button("Login");
+        loginButton.setOnAction(e -> {
+            goToLogin();
+        });
+        loginButton.setStyle(submitButtonStyle);
+
+       //LOGIN REDIRECTION TODO:  
         mainVbox.getChildren().addAll(titleHeader, nameLabel, nameField, genderSelect, passwordLabel, passwordField, 
                                       emailLabel, emailField, phoneLabel, phoneField,
-                                      submitButton, resultText); 
+                                      submitButton,loginButton, resultText); 
 
         
         VBox altVbox = new VBox(10);
@@ -177,7 +188,6 @@ public class RegistrationScene {
             resultText.setText("Please fill in all the details."); 
         }
 
-        RegistrationService registerUser = new RegistrationService(this.storage); 
 
         String statusMessage = registerUser.createAccount(name, password, noPhone, email, gender); 
         resultText.setText(statusMessage);
@@ -186,6 +196,11 @@ public class RegistrationScene {
             UserDashboardScene userDashboard = new UserDashboardScene(registerUser.getGeneratedUserID(), name, email, noPhone, gender, storage);
             userDashboard.display(primaryStage);
         }
+    }
+
+    public void goToLogin() {
+        AuthenticationScene login = new AuthenticationScene(storage, registerUser); 
+        login.display(primaryStage);
     }
 
     public void display(Stage primaryStage) {

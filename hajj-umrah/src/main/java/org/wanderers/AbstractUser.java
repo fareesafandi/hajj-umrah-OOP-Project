@@ -7,12 +7,17 @@ public abstract class AbstractUser {
    protected String password; 
    protected int noPhone; 
    protected String email; 
+   protected String gender; 
    
    //Getter methods
 
    public String getUserID() {
 
     return userID;  
+   }
+
+   public String getGender() {
+      return gender; 
    }
 
    public String getName() {

@@ -11,26 +11,13 @@ public class RegistrationService implements GeneralService {
     private DataStorage store;
     public static final String ID_DELIMITER = "\\.";  
     
-<<<<<<< HEAD
-=======
     private String userID; 
->>>>>>> 2f35afc741aabe6bddf2795e06a9cfbcdf2e9903
 
     public RegistrationService(DataStorage store) {
         this.UserCollection = store.getUsers();
         this.store = store;  
     }
 
-<<<<<<< HEAD
-   public void createAccount(String name, String password, int noPhone, String email) {
-   
-    //Validation methods
-    String userID = GenerateID();
-    //Check for redundancy
-
-
-    User newUser = new User(userID, name, password, noPhone, email); 
-=======
    public String createAccount(String name, String password, int noPhone, String email, String gender) {
     /*
      * createAccount() method 
@@ -76,16 +63,12 @@ public class RegistrationService implements GeneralService {
     }
 
     User newUser = new User(userID, name, password, noPhone, email, gender); 
->>>>>>> 2f35afc741aabe6bddf2795e06a9cfbcdf2e9903
     
     System.out.println("User Account: " + "[" + userID + "] Successfully created!");
     store.addAccount(newUser);
     store.saveToFile();
-<<<<<<< HEAD
-=======
 
     return "Account Creation Successful, Please Login"; //account creation successful
->>>>>>> 2f35afc741aabe6bddf2795e06a9cfbcdf2e9903
    }
 
    public ArrayList<User> getUserAccountCollection() {
@@ -119,11 +102,6 @@ public class RegistrationService implements GeneralService {
     return ID; 
    }
 
-<<<<<<< HEAD
-
-   public void findUserID() {
-    //find user ID from the collection of account arraylist
-=======
    public String getGeneratedUserID() {
     return this.userID; 
    }
@@ -138,7 +116,6 @@ public class RegistrationService implements GeneralService {
     }
 
     return UserCollection.get(0); 
->>>>>>> 2f35afc741aabe6bddf2795e06a9cfbcdf2e9903
    }
 
 }

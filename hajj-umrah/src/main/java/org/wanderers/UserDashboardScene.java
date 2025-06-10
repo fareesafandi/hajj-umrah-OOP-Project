@@ -2,6 +2,7 @@ package org.wanderers;
 
 import org.wanderers.RegistrationService;
 import org.wanderers.BookingScene;
+import org.wanderers.TrackingScene;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -43,6 +44,10 @@ public class UserDashboardScene {
 
     private Label visaLabel; 
     
+    public UserDashboardScene() {
+
+    }
+
     public UserDashboardScene(String userID, String name, String email, int noPhone, String gender, DataStorage storage) {
         this.userID = userID; 
         this.name = name; 
@@ -182,8 +187,14 @@ public class UserDashboardScene {
         bookingTab.setClosable(false);
         bookingTab.setContent(bookVbox);
 
+        Button trackingPageButton = new Button("TO TRACKING PAGE");
+        trackingPageButton.setOnAction(e -> {
+            toTrackingPage();
+        });
+
         trackingTab.setText("Tracking");
         trackingTab.setStyle(tabStyle);
+        trackingTab.setContent(trackingPageButton);
         trackingTab.setClosable(false);
 
         mainDashboard.getTabs().add(profileTab); 
@@ -193,6 +204,11 @@ public class UserDashboardScene {
         Scene dashboardScene = new Scene(mainDashboard, 500, 500);
         
         return dashboardScene; 
+    }
+
+    public void toTrackingPage() {
+        TrackingScene track = new TrackingScene(store); 
+        track.display(primaryStage);
     }
     
     public void updateVisaID(int VisaID) {

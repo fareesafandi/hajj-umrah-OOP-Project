@@ -13,6 +13,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import org.wanderers.RegistrationService;
+
 public class AuthenticationScene {
     
     private TextField userIDField;
@@ -22,12 +24,19 @@ public class AuthenticationScene {
 
     private DataStorage storage;
     private Authentication authentication;
+    private RegistrationService register; 
+    private Stage primaryStage; 
 
     /**
      * Constructor for AuthenticationScene.
      * Initializes DataStorage and AuthenticationService.
      * @param storage The DataStorage instance to use for authentication.
      */
+    public AuthenticationScene(DataStorage store, RegistrationService register) {
+        this.storage = store; 
+        this.register = register; 
+        this.authentication = new Authentication(store); 
+    }
     public AuthenticationScene(DataStorage storage) {
         this.storage = storage;
         this.authentication = new Authentication(storage);
@@ -119,7 +128,14 @@ public class AuthenticationScene {
             resultText.setStyle("-fx-fill: green;"); // Indicate success
             // In a real application, you would now transition to the main application scene.
             System.out.println("User " + authenticatedUser.getUserID() + " logged in successfully.");
+
+            String name = register.findUserByID(userID).name; 
+            String email = register.findUserByID(userID).email; 
+            int noPhone = register.findUserByID(userID).noPhone; 
+            String gender = register.findUserByID(userID).gender; 
             
+            UserDashboardScene userDashboard = new UserDashboardScene(register.getGeneratedUserID(), name, email, noPhone, gender, storage);
+            userDashboard.display(primaryStage);
             // Example: Clear fields after successful login
             userIDField.clear();
             passwordField.clear();
@@ -140,6 +156,7 @@ public class AuthenticationScene {
      * @param primaryStage The primary Stage of the JavaFX application.
      */
     public void display(Stage primaryStage) {
+        this.primaryStage = primaryStage; 
         primaryStage.setTitle("User Authentication"); // Set window title
         primaryStage.setScene(initializeScene()); // Set the scene
         primaryStage.show(); // Show the stage
