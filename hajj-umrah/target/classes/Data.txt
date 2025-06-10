@@ -1,0 +1,7 @@
+USER|U.101|Alice Smith|alicepass|111222333|alice@example.com|Female|0|0|false|null|
+USER|U.102|Bob Johnson|bobpass|444555666|bob@example.com|Male|0|0|false|null|
+USER|U.103|Charlie Brown|charliepass|777888999|charlie@example.com|Male|0|0|false|null|
+USER|U.1|Kamaruddin bin Kamsol|kama1234|192344566|Kamruddin2005@gmail.com|Male|0|0|false|null|
+USER|U.2|Muhammad Ali|ali1234|19634|ali@gmail.com|Male|0|0|false|null|
+
+Booking Detail |B.1|U.1|Standard (RM 8900)|2025-06-18|
