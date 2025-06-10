@@ -23,7 +23,7 @@ Our project is to create a hajj and umrah system, that will be build in Java lan
 Navigate to the root directory of the project and run the code:
 
 ```bash
-.../hajj-umrah-oop-proj> maven clean install
+.../hajj-umrah-oop-proj> mvn clean javafx:run
 ```
 
 
