@@ -1,29 +1,35 @@
 package org.wanderers;
 
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import org.wanderers.AuthenticationScene;
+import org.wanderers.RegistrationScene;
+import org.wanderers.DataStorage;
 /**
  * JavaFX App
  */
 public class App extends Application {
 
-    @Override
-    public void start(Stage stage) {
-        var javaVersion = SystemInfo.javaVersion();
-        var javafxVersion = SystemInfo.javafxVersion();
+    private Stage mainStage; 
 
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
-        stage.setScene(scene);
-        stage.show();
+    public Stage getMainStage() {
+        return mainStage; 
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        /*
+         * The program will either start with user registration or user login
+         */
+        DataStorage store = new DataStorage();
+        
+        RegistrationScene register = new RegistrationScene(store); 
+        register.display(primaryStage);
+
     }
 
     public static void main(String[] args) {
         launch();
     }
-
 }
